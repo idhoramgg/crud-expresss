@@ -55,6 +55,28 @@ const router = app => {
   //     }
   //   }}
   
+  app.put('/edit/:id', (req, res) => {
+    try {
+      let idUpdate = users.findIndex(data => data.id == req.params.id);
+
+      users.map(data => {
+        if(data.id == req.params.id) {
+          users[idUpdate].name = req.body.name;
+          users[idUpdate].email = req.body.email;
+          users[idUpdate].gender = req.body.gender;
+        }
+      });
+      res.send({
+        message: 'data succesfully update',
+        users
+      });
+    } catch (error) {
+      res.send({
+        message: 'error update',
+        error
+      });
+    }
+  })
   
   
 
