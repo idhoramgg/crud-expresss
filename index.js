@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 
 routes(app);
 
-app.listen('3000', function(){
-  console.log('running server on port 3000')
+app.listen( PORT, function(){
+  console.log(`running server on port ${PORT}`)
 })
