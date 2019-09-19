@@ -1,7 +1,7 @@
 const users = require('./user')
 
 const router = app => {
-  app.get('/', (req, res) => res.send('Welcome'));
+  app.get('/', (req, res) => res.send('Welcome Bujang'));
 
 
   app.get('/users', (req, res) => res.send(users));
