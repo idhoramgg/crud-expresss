@@ -22,7 +22,7 @@ const router = app => {
   }, )
 
 
-  app.get('/users/:id', (req, res) => {
+  app.get('/:id', (req, res) => {
     // users.splice(req.body-1)
     const user = users.find(data => data.id === parseInt(req.params.id))
     res.json({
@@ -31,7 +31,7 @@ const router = app => {
   })
 
 
-  app.delete('/delete/:id', (req, res) => {
+  app.delete('/:id', (req, res) => {
     const id = users.findIndex( element => element.id == req.params.id)
     //vuat rermove array nomor ke 0 sampai 1
     users.splice(id, 1 )
@@ -55,7 +55,7 @@ const router = app => {
   //     }
   //   }}
   
-  app.put('/edit/:id', (req, res) => {
+  app.put('/:id', (req, res) => {
     try {
       let idUpdate = users.findIndex(data => data.id == req.params.id);
 
